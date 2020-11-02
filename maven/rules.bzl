@@ -353,7 +353,7 @@ def _assemble_maven_impl(ctx):
 
     if hasattr(target, "files") and target.files.to_list() and target.files.to_list()[0].extension == 'jar':
         all_jars = target[JavaInfo].outputs.jars
-        jar = all_jars[0].class_jar
+        jar = all_jars[1].class_jar
 
         for output in all_jars:
             if output.source_jar and (output.source_jar.basename.endswith('-src.jar') or output.source_jar.basename.endswith('-sources.jar')):
